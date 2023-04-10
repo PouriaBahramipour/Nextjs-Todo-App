@@ -1,0 +1,33 @@
+@import "./variables";
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("../asset/fonts/DMSans-Regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans";
+  padding: 0;
+  margin: 0;
+  background-color: $bg-color;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  color: $hover-color;
+}
+ul {
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
