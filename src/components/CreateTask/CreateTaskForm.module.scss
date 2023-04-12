@@ -1,0 +1,61 @@
+@import "/src/styles/variables";
+
+.form {
+  @include flexbox;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 50%;
+
+  .title-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+
+    label {
+      @include label-style;
+    }
+
+    input {
+      @include input-style;
+    }
+  }
+
+  .category-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    label {
+      @include label-style;
+    }
+
+    input {
+      @include input-style;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+
+    .cancelButton {
+      background-color: $color_white;
+      color: $color-black;
+      border: none;
+      font-size: 14px;
+    }
+    .cancelButton:hover,
+    .cancelButton:active {
+      color: $hover-color;
+      background-color: $cancelButton-color;
+    }
+    .submitButton:hover,
+    .submitButton:active {
+      background-color: $hover-color;
+      border-color: $hover-color;
+    }
+  }
+}
