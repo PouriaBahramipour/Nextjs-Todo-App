@@ -1,5 +1,7 @@
+import CreateTask from "@/src/components/CreateTask/CreateTask";
+
 const NewTask = () => {
-  return <h1>New Task</h1>;
+  return <CreateTask />;
 };
 
 export default NewTask;

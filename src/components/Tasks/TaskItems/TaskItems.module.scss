@@ -1,0 +1,9 @@
+@import "/src/styles/variables";
+
+.taskItem {
+  height: 320px;
+  overflow: auto;
+  width: 100%;
+  padding: 0rem 0 0 2rem;
+  scrollbar-width: none;
+}

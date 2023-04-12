@@ -1,7 +1,8 @@
-import Home from "../components/Home/Home";
+// import Home from "../components/Home/Home";
+import Tasks from "../components/Tasks/Tasks";
 
 const HomePage = () => {
-  return <Home />;
+  return <Tasks />;
 };
 
 export default HomePage;

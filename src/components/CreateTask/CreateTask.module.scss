@@ -1,0 +1,8 @@
+@import "/src/styles/variables";
+
+.header {
+  @include flexbox;
+  h2 {
+    width: 100%;
+  }
+}
