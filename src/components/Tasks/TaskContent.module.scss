@@ -1,0 +1,9 @@
+@import "/src/styles/variables";
+
+.task-content {
+  position: relative;
+  @include flexbox;
+  flex-direction: column;
+  flex: 4;
+  width: 80%;
+}

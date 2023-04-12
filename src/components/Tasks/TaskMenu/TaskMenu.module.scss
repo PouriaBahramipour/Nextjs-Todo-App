@@ -1,0 +1,29 @@
+@import "./src/styles/variables";
+
+.menu-bar {
+  height: 503px;
+  overflow: auto;
+  width: 100%;
+  flex: 1;
+  width: 20%;
+  border-right: 1px solid #ccc;
+  padding: 5rem 0 9rem 2rem;
+  text-align: left;
+
+  li {
+    margin: 1rem 0 1.5rem 0.8rem;
+    color: $color-black;
+    font-weight: bold;
+    cursor: pointer !important;
+  }
+  .selectedItem {
+    color: $primary-color;
+    margin-left: 3px;
+  }
+  .checkIcon {
+    margin-right: 2px;
+  }
+  li:hover {
+    color: $hover-color;
+  }
+}
