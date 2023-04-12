@@ -1,0 +1,13 @@
+@import "/src/styles/variables";
+
+.card {
+  background-color: $color_white;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 50rem;
+  overflow: auto;
+  height: 35rem;
+  margin: 3.125rem auto;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}

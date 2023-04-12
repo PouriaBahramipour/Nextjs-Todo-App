@@ -1,0 +1,29 @@
+@import "/src/styles/variables";
+
+.home {
+  @include flexbox;
+  flex-direction: column;
+  height: 100%;
+
+  .title {
+    p {
+      font-size: 24px;
+      margin-top: 25px;
+    }
+  }
+  .new-task-link {
+    a {
+      margin-left: 5px;
+    }
+  }
+
+  .actions:hover,
+  .actions:active {
+    a {
+      color: $hover-color;
+    }
+    .plusIcon {
+      color: $hover-color;
+    }
+  }
+}

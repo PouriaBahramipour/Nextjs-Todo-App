@@ -15,7 +15,9 @@ body {
   margin: 0;
   background-color: $bg-color;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 a {
   color: $primary-color;
   text-decoration: none;
