@@ -1,33 +1,33 @@
 // import Home from "../components/Home/Home";
 import Tasks from "../components/Tasks/Tasks";
 import { supabase } from "@/src/lib/supabaseClient";
+import { useDispatch, useSelector } from "react-redux";
+import { todoActions } from "../store";
 
 export async function getStaticProps() {
-  let { data } = await supabase.from("countries").select("*");
+  let { data } = await supabase.from("todo").select();
 
   return {
     props: {
-      countries: data,
+      todoItem: data,
     },
   };
 }
-const HomePage = ({ countries }) => {
+const HomePage = ({ todoItem }) => {
+  const dispatch = useDispatch();
+
   let LoadedItem = [];
-  for (let key in countries) {
+
+  for (let key in todoItem) {
     LoadedItem.push({
       id: key,
-      name: countries[key].name,
+      title: todoItem[key].title,
+      category: todoItem[key].category,
     });
   }
-  console.log(LoadedItem);
-  return (
-    // <ul>
-    //   {countries.map((country) => (
-    //     <li key={country.id}>{country.name}</li>
-    //   ))}
-    // </ul>
-    <Tasks key={LoadedItem[1].id} name={LoadedItem[1].name} />
-  );
+
+  dispatch(todoActions.setTodoData(LoadedItem));
+  return <Tasks />;
 };
 
 export default HomePage;
