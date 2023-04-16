@@ -58,4 +58,16 @@
       border-color: $hover-color;
     }
   }
+  .invalid p {
+    @include label-style;
+    font-size: 0.8rem;
+    margin: 6px 0 0 12px !important;
+    color: $warning-color;
+  }
+
+  .invalid input {
+    border-color: $warning-color;
+    background-color: $bg-invalidInput;
+    margin-bottom: 0;
+  }
 }
