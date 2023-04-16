@@ -20,7 +20,7 @@ const HomePage = ({ todoItem }) => {
 
   for (let key in todoItem) {
     LoadedItem.push({
-      id: key,
+      id: todoItem[key].id,
       title: todoItem[key].title,
       category: todoItem[key].category,
     });
