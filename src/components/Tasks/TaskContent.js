@@ -7,7 +7,7 @@ const TaskContent = (props) => {
   return (
     <div className={classes["task-content"]}>
       <TaskHeader />
-      <TaskItems key={props.id} name={props.name} />
+      <TaskItems key={props.id} title={props.title} category={props.category} />
       <TaskFooter />
     </div>
   );

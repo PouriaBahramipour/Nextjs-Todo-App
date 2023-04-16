@@ -2,11 +2,11 @@ import TaskContent from "./TaskContent";
 import TaskMenu from "./TaskMenu/TaskMenu";
 import classes from "./Tasks.module.scss";
 
-const Tasks = (props) => {
+const Tasks = () => {
   return (
     <div className={classes["task-items"]}>
       <TaskMenu />
-      <TaskContent key={props.id} name={props.name} />
+      <TaskContent />
     </div>
   );
 };
