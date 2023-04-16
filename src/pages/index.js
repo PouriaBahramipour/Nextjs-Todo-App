@@ -1,7 +1,7 @@
 // import Home from "../components/Home/Home";
 import Tasks from "../components/Tasks/Tasks";
 import { supabase } from "@/src/lib/supabaseClient";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { todoActions } from "../store";
 
 export async function getStaticProps() {
