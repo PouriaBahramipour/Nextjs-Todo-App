@@ -25,6 +25,7 @@ const HomePage = ({ todoItem }) => {
       category: todoItem[key].category,
     });
   }
+  console.log(LoadedItem[0].id);
 
   dispatch(todoActions.setTodoData(LoadedItem));
   return <Tasks />;

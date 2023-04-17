@@ -6,33 +6,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer, toast } from "react-toastify";
 import classes from "./TaskItemLists.module.scss";
-const successNotify = (value) =>
-  toast.success(value, {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "colored",
-  });
 
-const warningNotify = (value) => {
-  toast.error(value, {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "colored",
-  });
-};
 const TaskItemList = (props) => {
   const [isCheckedChechBox, setIsCheckedChechBox] = useState(false);
   const dispatch = useDispatch();
+  const successNotify = (value) =>
+    toast.success(value, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+
+  const warningNotify = (value) => {
+    toast.error(value, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
 
   const titleStyleTaskDone = isCheckedChechBox ? classes.lineThrough : "";
   const categoryStyleTaskDone = isCheckedChechBox
@@ -51,25 +52,23 @@ const TaskItemList = (props) => {
       .eq("id", props.id);
 
     if (error) {
-      warningNotify("Error Delete task");
+      // warningNotify("Error Delete task");
     } else {
-      successNotify("Removed successfully");
+      // successNotify("Removed successfully");
 
-      setTimeout(async () => {
-        let { data } = await supabase.from("todo").select();
+      let { data } = await supabase.from("todo").select();
 
-        let LoadedItem = [];
+      let LoadedItem = [];
 
-        for (let key in data) {
-          LoadedItem.push({
-            id: data[key].id,
-            title: data[key].title,
-            category: data[key].category,
-          });
-        }
+      for (let key in data) {
+        LoadedItem.push({
+          id: data[key].id,
+          title: data[key].title,
+          category: data[key].category,
+        });
+      }
 
-        dispatch(todoActions.setTodoData(LoadedItem));
-      }, 1000);
+      dispatch(todoActions.setTodoData(LoadedItem));
     }
   };
 
