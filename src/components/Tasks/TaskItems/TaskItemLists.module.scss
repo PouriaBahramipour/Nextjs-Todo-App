@@ -1,101 +1,94 @@
 @import "/src/styles/variables";
-.taskListItem:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
 
-.taskListItem {
-  width: 95%;
+.taskItem {
+  display: flex;
 
-  .taskItem {
+  .taskTitle {
     display: flex;
-
-    .taskTitle {
-      display: flex;
-      align-items: center;
-      flex: 2;
-      .lineThrough {
-        text-decoration: line-through;
-      }
-      p {
-        font-size: 14px;
-        font-weight: 600;
-      }
-      .checkbox {
-        margin: 0 0.5rem;
-        width: 26px;
-        height: 27px;
-        cursor: pointer !important;
-      }
+    align-items: center;
+    flex: 2;
+    .lineThrough {
+      text-decoration: line-through;
     }
-    .taskRemove {
-      flex: 1;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      color: $primary-color;
-
-      .icon {
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        cursor: pointer !important;
-      }
-      .icon:hover {
-        opacity: 1;
-        animation: pulse 0.5s ease-out;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.2);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
+    p {
+      font-size: 14px;
+      font-weight: 600;
     }
-    .taskCategory {
-      flex: 1;
-      @include flexbox;
+    .checkbox {
+      margin: 0 0.5rem;
+      width: 26px;
+      height: 27px;
       cursor: pointer !important;
+    }
+  }
+  .taskRemove {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: $primary-color;
 
-      &:hover {
-        opacity: 1;
-        animation: pulse 0.5s ease-out;
-      }
+    .icon {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      cursor: pointer !important;
+    }
+    .icon:hover {
+      opacity: 1;
+      animation: pulse 0.5s ease-out;
+    }
 
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-        100% {
-          transform: scale(1);
-        }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
       }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+  .taskCategory {
+    flex: 1;
+    @include flexbox;
+    cursor: pointer !important;
 
-      .categoryStyle {
-        font-size: 12px;
-        background: $bg-category;
-        color: $primary-color;
-        text-align: center;
-        width: 80%;
-        padding: 0.3rem 0.5rem;
-        border-radius: 2rem;
+    &:hover {
+      opacity: 1;
+      animation: pulse 0.5s ease-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
       }
-      .categoryDoneStyle {
-        font-size: 12px;
-        background: $bg-color;
-        color: $color_white;
-        text-align: center;
-        width: 80%;
-        padding: 0.3rem 0.5rem;
-        border-radius: 2rem;
+      50% {
+        transform: scale(1.1);
       }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .categoryStyle {
+      font-size: 12px;
+      background: $bg-category;
+      color: $primary-color;
+      text-align: center;
+      width: 80%;
+      padding: 0.3rem 0.5rem;
+      border-radius: 2rem;
+    }
+    .categoryDoneStyle {
+      font-size: 12px;
+      background: $bg-color;
+      color: $color_white;
+      text-align: center;
+      width: 80%;
+      padding: 0.3rem 0.5rem;
+      border-radius: 2rem;
     }
   }
 }

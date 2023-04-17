@@ -45,7 +45,6 @@ const TaskItemList = (props) => {
   };
 
   const handlerDeleteTodoItem = async () => {
-    console.log(props.id);
     const { data, error } = await supabase
       .from("todo")
       .delete()
@@ -75,29 +74,27 @@ const TaskItemList = (props) => {
   return (
     <Fragment>
       <ToastContainer />
-      <li key={props.id} className={classes.taskListItem}>
-        <div className={classes.taskItem}>
-          <div className={classes.taskTitle}>
-            <input
-              type="checkbox"
-              className={classes.checkbox}
-              onChange={handleCheckBox}
-            />
-            <p className={titleStyleTaskDone}>{props.title}</p>
-          </div>
-          <div className={classes.taskRemove}>
-            <FontAwesomeIcon
-              icon={faTrashCan}
-              className={classes.icon}
-              size="1x"
-              onClick={handlerDeleteTodoItem}
-            />
-          </div>
-          <div className={classes.taskCategory}>
-            <p className={categoryStyleTaskDone}>{props.category}</p>
-          </div>
+      <div className={classes.taskItem}>
+        <div className={classes.taskTitle}>
+          <input
+            type="checkbox"
+            className={classes.checkbox}
+            onChange={handleCheckBox}
+          />
+          <p className={titleStyleTaskDone}>{props.title}</p>
         </div>
-      </li>
+        <div className={classes.taskRemove}>
+          <FontAwesomeIcon
+            icon={faTrashCan}
+            className={classes.icon}
+            size="1x"
+            onClick={handlerDeleteTodoItem}
+          />
+        </div>
+        <div className={classes.taskCategory}>
+          <p className={categoryStyleTaskDone}>{props.category}</p>
+        </div>
+      </div>
     </Fragment>
   );
 };

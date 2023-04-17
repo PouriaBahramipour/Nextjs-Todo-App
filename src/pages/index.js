@@ -39,7 +39,6 @@ const HomePage = ({ todoItem }) => {
 
   const hasItemState = todoData.length > 0;
 
-  console.log("aa");
   return (
     <Fragment>
       {isLoading && <LoadingPage />}

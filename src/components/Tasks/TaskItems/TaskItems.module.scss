@@ -6,4 +6,12 @@
   width: 100%;
   padding: 0rem 0 0 2rem;
   scrollbar-width: none;
+
+  .li {
+    width: 95%;
+  }
+
+  li:not(:last-child) {
+    border-bottom: 1px solid #ccc !important;
+  }
 }
