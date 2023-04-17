@@ -33,7 +33,7 @@ const HomePage = ({ todoItem }) => {
     dispatch(todoActions.setTodoData(LoadedItem));
   }, [dispatch]);
 
-  const todoData = useSelector((state) => state.todo.filteredData);
+  const todoData = useSelector((state) => state.todo.todoData);
 
   const isLoading = useSelector((state) => state.todo.isLoading);
 
