@@ -4,7 +4,7 @@ import { supabase } from "@/src/lib/supabaseClient";
 import { useDispatch } from "react-redux";
 import { todoActions } from "../store";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let { data } = await supabase.from("todo").select();
 
   return {
